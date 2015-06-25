@@ -105,7 +105,7 @@ elif os.name == 'posix':
     lib_name = find_library('spatialindex_c')
     if lib_name is None:
         raise OSError("Could not find libspatialindex_c library file")
-
+    print lib_name
     rt = ctypes.CDLL(lib_name)
 else:
     raise RTreeError('Unsupported OS "%s"' % os.name)
