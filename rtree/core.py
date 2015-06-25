@@ -102,10 +102,10 @@ if os.name == 'nt':
 
 elif os.name == 'posix':
     platform = os.uname()[0]
-    # lib_name = find_library('spatialindex_c')
-    # if lib_name is None:
-    #     raise OSError("Could not find libspatialindex_c library file")
-    lib_name = '/Users/ryan.okuinghttons/anaconda/envs/_test/lib/libspatialindex_c.dylib'
+    lib_name = find_library('spatialindex_c')
+    if lib_name is None:
+        raise OSError("Could not find libspatialindex_c library file")
+
     rt = ctypes.CDLL(lib_name)
 else:
     raise RTreeError('Unsupported OS "%s"' % os.name)
